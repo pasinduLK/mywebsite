@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+@font-face {
+  font-family: "Martius";
+  src: url("/fonts/Martius-Regular.ttf") format("truetype");
+  font-weight: normal; /* Or specify a weight if needed */
+  font-style: normal; /* Or specify a style if needed */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+/* FIX mouse changing Delay ////////////////////////////////*/
+.skill-container a,
+.skill-container a:hover,
+.skill-container a:active,
+.contact-me a,
+.contact-me a:hover,
+.contact-me a:active{
+    cursor: url("/homepage/hovercur.png"), pointer !important;
+}
+
+
+
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: Martius,Monospace, 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*height: 100vh;*/
+  margin: 0;
+  cursor: url("/homepage/normalcur.png"), auto; /* Custom cursor */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+.container {
+  text-align: center;
+}
+
+.name {
+  font-size: 8rem;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: JAPANESE ROBOT;
+  color: transparent;
+  background-image: url("/homepage/name.png");
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px white;
+  background-size: contain;
+  padding: 0%;
+  margin:10px;
+  text-align: center;
+  z-index: 5;
+}
+
+.name .gif img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  padding: 0%;
+}
+
+.tagline {
+  color: white;
+  font-size: 2rem;
+  margin-top: 0px;
+  opacity: 0.8;
+  z-index: 8;
+}
+
+/* ... (existing CSS remains the same) */
+
+
+
+/* Main resume button styling */
+.resume {
+  width: 200px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+  position: relative;
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  text-decoration: none;
+  color: red;
+  border: 2px solid transparent;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  background-color: transparent;
+  font-size:xx-large;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  cursor: url("/homepage/hovercur.png"), auto; /* Custom cursor */
+  z-index: 10;
+}
+
+
+.resume:hover {
+  transform: translateY(-5px);
+}
+
+/* Background behind the text */
+.resume-background {
+  position: absolute;
+  width: 110%; /* Adjust as needed */
+  height: 110%; /* Adjust as needed */
+  top: -5%; /* Adjust as needed */
+  left: -5%; /* Adjust as needed */
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  background: red;
+  z-index: 9;
+}
+
+/* Outline text styling */
+/* Outline text styling */
+.resume-outline {
+  color: #ffffff;
+  text-align: center;
+  background-color: black;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 10; /* Adjusting the layer order to keep the text above the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.landing-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Takes full viewport height */
+  width: 100%;
+  background-image: url('homepage/home.jpg');
+  background-position: center;
+  background-size: cover;  /* Ensures the image covers the whole element */
+
+
+}
+
+.landingpage {
+  text-align: center;
+  width: 90%; /* Adjust as needed */
+  max-width: 1200px; /* Optional: limit the width */
+  padding: 20px;
+}
+
+.skills-icons {
+  justify-content: center; /* Center the icons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .name {
+    font-size: 5rem;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+  }
+
+  .resume {
+    width: 150px;
+    height: 40px;
+    font-size: large;
+  }
+
+  .skill-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 3rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*About me Section/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* About Me Section - Full-Width Background */
+.about-me,.contact-me,.works ,.skills {
+  width: 100vw; /* Full width of the viewport */
+  height: 200px; /* Fixed height */
+  background-size: cover; /* Ensures full width while keeping aspect ratio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin: 0; /* No margins */
+  padding: 0;
+  overflow: hidden; /* Ensures no unwanted spacing */
+}
+
+/* Dark overlay for better text readability */
+.contact-me::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adds slight darkness for better contrast */
+}
+
+.works::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adds slight darkness for better contrast */
+}
+
+.about-me::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adds slight darkness for better contrast */
+}
+
+.skills::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adds slight darkness for better contrast */
+}
+
+
+
+/* About Me Text */
+
+.about-text, .contact-text, .works-text, .skills-text {
+  font-size: 6rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.8;
+  background: linear-gradient(-40deg, 
+      transparent 0%, 
+      transparent 40%, 
+      rgba(255, 255, 255, 0.8) 50%, 
+      transparent 60%, 
+      transparent 100%);
+  background-size: 250px; /* Adjusted for smoother motion */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.534); /* Ensures text is visible at all times */
+  animation: chrome-shine 5s linear infinite;
+
+}
+
+/* Chrome shine animation */
+@keyframes chrome-shine {
+  0% {
+      background-position: 250px; /* Starts offscreen to the right */
+  }
+  100% {
+      background-position: -250px; /* Moves offscreen to the left */
+  }
+}
+
+
+
+
+
+
+
+.aboutme-description{
+  margin: 50px;
+  font-size: 2rem;
+  opacity: 0.8;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+
+
+
+/* Responsive ABOUT ME Design */
+@media (max-width: 768px) {
+  .about-me,.contact-me,.works ,.skills {
+    height: 120px;
+  }
+
+  .about-text {
+    font-size: 2.5rem;
+  }
+
+  .aboutme-description{
+    font-size: 1.5rem;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .about-me,.contact-me,.works ,.skills {
+    height: 90px;
+  }
+
+  .about-text {
+    font-size: 2rem;
+  }
+
+  .aboutme-description{
+    font-size: 1rem;
+  }
+}
+
+/* Responsive NAME Adjustments */
+
+@media (max-width: 1920px) {
+  .name {
+    font-size: 5.8rem;
+    -webkit-text-stroke: 1.5px rgb(255, 255, 255); /* Reduce stroke */
+    
+  }
+  .aboutme-description{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .name {
+    font-size: 5rem;
+    -webkit-text-stroke: 1.5px rgb(255, 255, 255); /* Reduce stroke */
+  }
+  .aboutme-description{
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 3rem;
+    -webkit-text-stroke: 1px rgb(255, 255, 255); /* Further reduce stroke */
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2.3rem;
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255); /* Thin stroke for small screens */
+  }
+}
+
+@media (max-width: 360px) {
+  .name {
+    font-size: 2rem;
+    -webkit-text-stroke: 0.3px rgb(255, 255, 255); /* Almost no stroke on very small devices */
+  }
+  .aboutme-description{
+    font-size: 1.2rem;
+  }
+}
+
+
+/* skilss and tools /////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.skill-container {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.skill-link {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  /*border-radius: 50%;*/
+  padding: 2px;
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.skill-icon {
+  width: 3rem; /* Adjust icon size */
+  height: 3rem; /* Adjust icon size */
+  cursor: url("/homepage/hovercur.png"), auto; /* Custom cursor */
+  z-index: 11;
+}
+
+.skill-name {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  bottom: -35px; /* Adjust position */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.skill-container:hover .skill-name {
+  opacity: 1;
+}
+
+
+.skill-link:hover {
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+/* Cards Section /////////////////////////////////////////////////////////////////////////////////////////////////// */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  padding: 100px;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+/* Card Container */
+.card-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Polygon Card */
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #0c1317;
+  background-image: url("homepage/card.png");
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column-reverse; /* Title at bottom */
+  justify-content: space-between; /* Space between content and title */
+  align-items: flex-start; /* Title aligned to left */
+  padding: 20px;
+  padding-bottom: 30px; /*Added bottom padding*/
+  padding-left: 30px; /*Added left padding*/
+  transition: transform 0.4s ease-in-out;
+  z-index: 5;
+  cursor: url("/homepage/hovercur.png"), auto; /* Custom cursor */
+}
+
+/* Card Outline Shape */
+.card-outline {
+  position: absolute;
+  width: 102%;
+  height: 102%;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+  z-index: 3;
+  transition: transform 0.4s ease-in-out; /* Match the card's transition duration */
+  filter: blur(10px);
+  animation: smoothBlueRedFlow 1s linear infinite;
+}
+
+/* Card Hover Effect */
+.card-container:hover .card {
+  transform: translateY(-10px);
+}
+
+.card-container:hover .card-outline {
+  transform: translateY(-10px);
+}
+
+/* Card Title */
+.card-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.8;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards-section {
+      grid-template-columns: repeat(1, 2fr);
+      gap: 40px;
+      padding: 50px;
+  }
+
+  .card {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-section {
+      padding: 30px;
+  }
+
+  .card-title {
+      font-size: 1.5rem;
+  }
+}
+
+@keyframes smoothBlueRedFlow {
+  0% {
+      background: conic-gradient(from 0deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  10% {
+      background: conic-gradient(from 36deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  20% {
+      background: conic-gradient(from 72deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  30% {
+      background: conic-gradient(from 108deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  40% {
+      background: conic-gradient(from 144deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  50% {
+      background: conic-gradient(from 180deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  60% {
+      background: conic-gradient(from 216deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  70% {
+      background: conic-gradient(from 252deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  80% {
+      background: conic-gradient(from 288deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  90% {
+      background: conic-gradient(from 324deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+  100% {
+      background: conic-gradient(from 360deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+  }
+}
+
+
+
+.about-me {
+    background: url("/homepage/1.jpg") center/cover no-repeat;
+  }
+
+.skills {
+    background: url("/homepage/2.jpg") center/cover no-repeat;
+  }
+
+.works {
+    background: url("/homepage/3.jpg") center/cover no-repeat;
+  }
+
+.contact-me{
+     background: url("/homepage/4.jpg") center/cover no-repeat;
+  }
+
+
+
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a1a1a; /* Dark background */
+    color: #888; /* Light gray text */
+    margin-top: 50px; /* Add some space between content and footer */
+    z-index: 10;
+  }
+  
+  .footer-content {
+    font-size: 1rem;
+    font-style: italic; /* Add an italic style */
+    opacity: 0.8; /* Slightly transparent */
+    z-index: 10;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    footer {
+      padding: 15px 0;
+    }
+  
+    .footer-content {
+      font-size: 0.9rem;
+    }
+  }
+
+
+
+  .photo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    z-index: 10;
+  }
+  
+  .photo-outline {
+    position: absolute;
+    width: 105%;
+    height: 105%;
+    left: 0%;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    background: conic-gradient(from 0deg, rgba(0, 0, 255, 0.8), rgba(255, 0, 0, 0.8));
+    filter: blur(10px);
+    animation: smoothBlueRedFlow 1s linear infinite;
+    z-index: 12;
+  }
+  
+  .photo-content {
+    top: 1.5%;
+    position: relative;
+    width: 94.5%;
+    height: 94.5%;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    overflow: hidden;
+    z-index: 14;
+  }
+  
+  .photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Or object-fit: contain; */
+  }
